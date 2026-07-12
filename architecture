@@ -1,0 +1,42 @@
+                          ┌────────────────────────┐
+                          │    Fire & Blood PDF    │
+                          └───────────┬────────────┘
+                                      │
+                                      ▼
+                           PDF Ingestion Pipeline
+                                      │
+                                      ▼
+                           Text Extraction & Chunking
+                                      │
+                                      ▼
+                     OpenAI text-embedding-3-small
+                                      │
+                                      ▼
+                              ChromaDB Vector Store
+═══════════════════════════════════════════════════════════════
+
+                    User Question (Streamlit UI)
+                                      │
+                                      ▼
+                             Query Rewriter
+                                      │
+                                      ▼
+                           Retriever (Top-K Search)
+                                      │
+                                      ▼
+                         Relevant Context Chunks
+                                      │
+                                      ▼
+                             Prompt Builder
+                                      │
+                                      ▼
+                           GPT-4o-mini (OpenAI)
+                                      │
+                                      ▼
+                       Grounded Response Generation
+                                      │
+                                      ▼
+            Answer + Source Chunks + Performance Metrics
+                                      │
+                                      ▼
+                             Streamlit User Interface
